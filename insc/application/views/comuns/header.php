@@ -14,8 +14,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<link href="<?php echo base_url("assets/css/geral.css") ?>" rel="stylesheet" />
 		<link href="<?php echo base_url("assets/css/menu.css") ?>" rel="stylesheet" />
+		<link href="<?php echo base_url("assets/css/responsive.css") ?>" rel="stylesheet" />
 
 		<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
 
 		<script type="text/javascript" src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script type="text/javascript" src="<?php echo base_url("assets/js/geral.js") ?>"></script>
 	</head>

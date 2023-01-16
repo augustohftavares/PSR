@@ -53,7 +53,19 @@ $route['default_controller'] = 'dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+/*
+ * DASHBOARD
+ */
 $route['dashboard'] = "Dashboard/index";
 
-$route['index'] = "Clients/index";
+/*
+ * CLIENTS
+ */
+$route['clientes'] = "Clients/index";
 
+/*
+ * OCURRENCES
+ */
+$route['ocorrencias'] = "Ocurrences/index";
+$route['adicionar_ocurrencia'] = "Ocurrences/add";
+$route['save'] = "Ocurrences/Save";

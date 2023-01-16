@@ -1,0 +1,113 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+.home-section .home-content {
+	position: relative;
+	padding-top:104px ;
+}
+
+.home-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 0 20px;
+	margin-bottom: 26px;
+}
+
+table { 
+	width: 100%; 
+  	border-collapse: collapse; 
+}
+
+th { 
+	border-bottom: 1px solid gray;
+  	color: gray; 
+  	font-weight: bold; 
+}
+
+td, th { 
+	padding: 10px; 
+  	text-align: left; 
+}
+
+td {color: gray;}
+
+.btnAdd {
+	background: #2E2EFF;
+	border-radius: 5px;
+	color: #fff;
+	padding: 5px;
+	text-decoration: none;
+}
+
+.btnAdd:hover {
+	background: blue;
+	transition: all 0.5s;
+}
+
+/*
+ * FORMS
+ */
+
+.inputs-all {
+	width: 100%;
+  	padding: 12px 20px;
+  	margin: 10px 0;
+  	display: inline-block;
+  	border: 1px solid #ccc;
+  	border-radius: 4px;
+  	box-sizing: border-box;
+}
+
+.input-submit {
+	width: 100%;
+  	background-color: #011B56;
+  	color: white;
+  	padding: 14px 20px;
+  	margin: 8px 0;
+  	border: none;
+  	border-radius: 4px;
+  	cursor: pointer;
+  	font-size: 15px;
+}
+
+.input-submit:hover {
+	background-color: #2452A3;
+}
+
+#formAddOcurrence{
+	margin-top: 20px;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  width: 100%;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+textarea {resize: none;}
+
+.active:hover {
+	background: #ff;
+}
