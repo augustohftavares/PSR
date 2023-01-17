@@ -57,19 +57,51 @@ class Ocurrences extends CI_Controller {
 		$this->load->view('Ocurrences/add',$data);
 	}
 
+	public function Delete() {
+		$id = $this->uri->segment(2);
+
+		if(is_null($id))
+			redirect('ocorrencias', 'refresh');
+
+		$status = $this->ocurrences_model->Delete($id);
+
+		if($status) {
+			$this->session->set_flashdata('success', '');
+			redirect(base_url("ocorrencias"), 'refresh');
+		} else
+			$this->session->set_flashdata('error', '<p>Erro ao tentar eliminar esta ocorrência. </p>');
+	}
+
 	private function Validation($operacao = 'insert'){
 
 		switch($operacao){
 			case 'save':
 			case 'insert':
-				//$rules['nomeCliente'] = array('trim', 'required', 'min_length[3]');
+				$rules['nomeCliente'] = array('trim', 'required', 'min_length[3]');
+				$rules['tipoEquipa'] = array('trim', 'required', 'min_length[2]', 'max_length[10]');
+				$rules['marca'] = array('trim', 'required', 'min_length[2]');
+				$rules['modelo'] = array('trim', 'required', 'min_length[3]');
+				$rules['backup'] = array('trim', 'required', 'min_length[3]', 'max_length[3]');
+				$rules['autorizaAbertura'] = array('trim', 'required', 'min_length[3]', 'max_length[3]');
+				$rules['pelicula'] = array('trim', 'required', 'min_length[3]', 'max_length[3]');
+				$rules['pin'] = array('trim', 'required', 'min_length[3]');
+				$rules['anomalia'] = array('trim', 'min_length[3]');
+				$rules['observacoes'] = array('trim', 'min_length[3]');
 				break;
 			default:
 				break;
 		}
 
-		//$this->form_validation->set_rules('nomeCliente', 'Cliente', $rules['nomeCliente']);
-		
+		$this->form_validation->set_rules('nomeCliente', 'Cliente', $rules['nomeCliente']);
+		$this->form_validation->set_rules('tipoEquipa', 'Tipo de Equipamento', $rules['tipoEquipa']);
+		$this->form_validation->set_rules('marca', 'Marca', $rules['marca']);
+		$this->form_validation->set_rules('modelo', 'Modelo', $rules['modelo']);
+		$this->form_validation->set_rules('backup', 'Backup', $rules['backup']);
+		$this->form_validation->set_rules('autorizaAbertura', 'Autoriza a abertura', $rules['autorizaAbertura']);
+		$this->form_validation->set_rules('pelicula', 'Película', $rules['pelicula']);
+		$this->form_validation->set_rules('pin', 'Pin', $rules['pin']);
+		$this->form_validation->set_rules('anomalia', 'Anomalia', $rules['anomalia']);
+		$this->form_validation->set_rules('observacoes', 'Observações', $rules['observacoes']);
 		return $this->form_validation->run();
 	}
 

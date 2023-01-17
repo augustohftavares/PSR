@@ -69,3 +69,4 @@ $route['clientes'] = "Clients/index";
 $route['ocorrencias'] = "Ocurrences/index";
 $route['adicionar_ocurrencia'] = "Ocurrences/add";
 $route['save'] = "Ocurrences/Save";
+$route['eliminar_ocorrencia/(:num)'] = "Ocurrences/Delete/$1";

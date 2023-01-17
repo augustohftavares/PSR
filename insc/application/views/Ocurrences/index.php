@@ -15,7 +15,7 @@ $this->load->view('comuns/header');
 		</div>
 
 		<div class="search-box">
-			<input id="searchbarOcurrence" type="text" placeholder="Procurar ocorrência..." onkeyup="search()">
+			<input id="searchbarOcurrence" type="text" placeholder="Procurar ocorrência..." onkeyup="search_o()">
 			<i class="bx bx-search"></i>
 		</div>
 
@@ -32,6 +32,7 @@ $this->load->view('comuns/header');
 		<table id="tableOcurrence">
 			<thead>
 				<tr>
+					<th></th>
 					<th>Cliente</th>
 		            <th>Data</th>
 		            <th>Tipo de Equipamento</th>
@@ -46,24 +47,27 @@ $this->load->view('comuns/header');
 
 				<?php if($ocurrences == FALSE): ?>
 					<tr id="trContent">
-						<td>Não existe nenhuma-</td>  
-						<td>-</td>  
-						<td>-</td>  
-						<td>-</td>  
-						<td>-</td>  
+						<td>Não existe nenhuma ocorrência</td> 
+						<td></td> 
+						<td></td> 
+						<td></td> 
+						<td></td> 
+						<td></td> 
+						<td></td> 
 					</tr>
 				<?php else: ?>
 
 				<?php foreach ($ocurrences as $row): ?>
 
 					<tr id="trContent">
+						<td>#<?php echo $row['id']?></td>
 						<td><?php echo $row['nomeCliente']?></td>
 						<td><?php echo $row['data']?></td>
 						<td><?php echo $row['tipoEquipa']?></td>
 						<td><?php echo $row['marca']?></td>
 						<td><?php echo $row['modelo']?></td>
 						<td>
-                        <a href="<?php echo $row['del_url'] ?>" onclick="return confirm('Pretendes mesmo eliminar este produto ?');"><i class='bx bxs-trash'></i></a>
+                        <a href="<?php echo $row['del_url'] ?>" onclick="return confirm('Pretendes mesmo eliminar esta Ocorrência ?');"><i class='bx bxs-trash'></i></a>
 						</td>
 				    </tr>
 
@@ -72,8 +76,6 @@ $this->load->view('comuns/header');
 			</tbody>	
 		</table>
   	</div>
-
-
 </section>
 <?php
 $this->load->view('comuns/footer');

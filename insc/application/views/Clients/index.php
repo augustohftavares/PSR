@@ -15,7 +15,7 @@ $this->load->view('comuns/header');
 		</div>
 
 		<div class="search-box">
-			<input id="searchbarClient" type="text" placeholder="Procurar cliente..." onkeyup="search()">
+			<input id="searchbarClient" type="text" placeholder="Procurar cliente..." onkeyup="search_c()">
 			<i class="bx bx-search"></i>
 		</div>
 
@@ -31,6 +31,7 @@ $this->load->view('comuns/header');
 		<table id="tableClient">
 			<thead>
 				<tr>
+					<th></th>
 					<th>Nome</th>
 		            <th>NIF</th>
 		            <th>Telemóvel</th>
@@ -45,16 +46,18 @@ $this->load->view('comuns/header');
 				<?php if($clients == FALSE): ?>
 					<tr id="trContent">
 						<td>Não existe nenhum cliente</td>
-						<td style="text-align: center;">-</td>  
-						<td style="text-align: center;">-</td>  
-						<td style="text-align: center;">-</td>  
-						<td style="text-align: center;">-</td>  
-						<td style="text-align: center;">-</td>  
+						<td>-</td>  
+						<td>-</td>  
+						<td>-</td>  
+						<td>-</td>  
+						<td>-</td>  
+						<td>-</td>  
 					</tr>
 				<?php else: ?>
 
 				<?php foreach ($clients as $row): ?>
 					<tr id="trContent">
+						<td>#<?php echo $row['id']?></td>
 						<td><?php echo $row['nome']?></td>
 						<td><?php echo $row['nif']?></td>
 						<td><?php echo $row['telemovel']?></td>

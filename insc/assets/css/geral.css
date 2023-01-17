@@ -19,6 +19,9 @@
 	margin-bottom: 26px;
 }
 
+/*
+ * TABLE
+ */
 table { 
 	width: 100%; 
   	border-collapse: collapse; 
@@ -80,34 +83,61 @@ td {color: gray;}
 	background-color: #2452A3;
 }
 
-#formAddOcurrence{
-	margin-top: 20px;
+textarea {resize: none;}
+
+
+#formAddOcurrence label{
+	color: gray;
+	padding: 12px 12px 12px 0;
+  	display: inline-block;
+  	font-weight: 700;
 }
 
+#formAddOcurrence input, select, textarea{
+	color: gray;
+	width: 100%;
+  	padding: 12px;
+  	border: 1px solid #ccc;
+  	border-radius: 4px;
+  	resize: none;
+}
+
+#btnSubmit {
+	background: #f5f5f5;
+	color: #000;
+}
+
+#btnSubmit:hover {
+	color: #Fff;
+	background: #0A2558;
+}
+
+
+
+/*
+ * ALERT
+ */
+
 .alert {
-  padding: 20px;
-  background-color: #f44336;
-  color: white;
-  width: 100%;
+  	padding: 20px;
+  	background-color: #f44336;
+  	color: #fff;
+  	width: 100%;
 }
 
 .closebtn {
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
+  	margin-left: 15px;
+  	color: white;
+  	font-weight: bold;
+  	float: right;
+  	font-size: 22px;
+  	line-height: 20px;
+  	cursor: pointer;
+  	transition: 0.3s;
 }
 
 .closebtn:hover {
-  color: black;
+  	color: black;
 }
 
-textarea {resize: none;}
 
-.active:hover {
-	background: #ff;
-}
