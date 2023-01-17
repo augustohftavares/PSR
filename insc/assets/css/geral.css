@@ -40,17 +40,26 @@ td, th {
 
 td {color: gray;}
 
-.btnAdd {
-	background: #2E2EFF;
+#btnAddOcurrence {
+	background: #5C5CFF;
 	border-radius: 5px;
 	color: #fff;
 	padding: 5px;
 	text-decoration: none;
+	margin-top: 10px;
 }
 
-.btnAdd:hover {
+#btnAdd:hover {
 	background: blue;
 	transition: all 0.5s;
+}
+
+#btnSeeClosedOcurrence {
+	background: #FF5C5C;
+	border-radius: 5px;
+	color: #fff;
+	padding: 5px;
+	text-decoration: none;
 }
 
 /*
@@ -102,6 +111,23 @@ textarea {resize: none;}
   	resize: none;
 }
 
+
+#formEditOcurrence label{
+	color: gray;
+	padding: 12px 12px 12px 0;
+  	display: inline-block;
+  	font-weight: 700;
+}
+
+#formEditOcurrence input, select, textarea{
+	color: gray;
+	width: 100%;
+  	padding: 12px;
+  	border: 1px solid #ccc;
+  	border-radius: 4px;
+  	resize: none;
+}
+
 #btnSubmit {
 	background: #f5f5f5;
 	color: #000;
@@ -112,6 +138,18 @@ textarea {resize: none;}
 	background: #0A2558;
 }
 
+.card {
+	width: 45%;
+  	max-width: 90%;
+  	margin: 20px auto 0;
+  	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  	padding: 24px;
+  	border-radius: 10px;
+  	background: #ffffff;
+}
+
+#list-details {list-style: none; color: #696969}
+#list-content{margin-top: 20px}
 
 
 /*
@@ -140,4 +178,23 @@ textarea {resize: none;}
   	color: black;
 }
 
+#pendente {
+	background: #FFFF8A;
+	border-radius: 5px;
+	color: gray;
+	padding: 2px;
+}
 
+#aberto {
+	background: #5CFF5C;
+	border-radius: 5px;
+	color: gray;
+	padding: 2px;
+}
+
+#fechado {
+	background: #FF5C5C;
+	border-radius: 5px;
+	color: #fff;
+	padding: 2px;
+}

@@ -28,7 +28,14 @@ $this->load->view('comuns/header');
 
 	<div class="home-content">
 
-		<a class="btnAdd" href="<?php echo base_url("adicionar_ocurrencia") ?>">+ Ocorrência</a>
+		<a id="btnAddOcurrence" href="<?php echo base_url("adicionar_ocurrencia") ?>"><i class='bx bxs-file-plus'></i> Ocorrência</a>
+		<a id="btnSeeClosedOcurrence" href="<?php echo base_url("adicionar_ocurrencia") ?>"><i class='bx bx-window-close'></i> Fechadas</a>
+
+		<?php 
+			if($this->session->flashdata('success') == TRUE) 
+				echo $this->session->flashdata('success');
+			?>
+
 		<table id="tableOcurrence">
 			<thead>
 				<tr>
@@ -38,10 +45,10 @@ $this->load->view('comuns/header');
 		            <th>Tipo de Equipamento</th>
 		            <th>Marca</th>
 		            <th>Modelo</th>
+		            <th>Status</th>
 		            <th></th>
 	            </tr>
 			</thead>
-
 
 			<tbody>
 
@@ -67,7 +74,18 @@ $this->load->view('comuns/header');
 						<td><?php echo $row['marca']?></td>
 						<td><?php echo $row['modelo']?></td>
 						<td>
-                        <a href="<?php echo $row['del_url'] ?>" onclick="return confirm('Pretendes mesmo eliminar esta Ocorrência ?');"><i class='bx bxs-trash'></i></a>
+							<?php if($row['status'] == "pendente"):?>
+								<span id="pendente"><i class='bx bx-time-five'></i></span>
+							<?php elseif($row['status'] == "aberto"): ?>
+								<span id="aberto"><i class='bx bxs-folder-open'></i></span>
+							<?php elseif($row['status'] == "fechado"):?>
+								<span id="fechado"><i class='bx bx-window-close'></i></span>
+							<?php endif ?>
+						</td>
+						<td>
+                        	<a href="<?php echo $row['detail_url'] ?>"><i class='bx bxs-detail'></i></a>
+                        	<a href="<?php echo $row['edit_url'] ?>"><i class='bx bxs-edit'></i></a>
+                        	<a href="<?php echo $row['del_url'] ?>"onclick="return confirm('Pretendes mesmo eliminar esta Ocorrência ?');"><i class='bx bxs-trash'></i></a>
 						</td>
 				    </tr>
 

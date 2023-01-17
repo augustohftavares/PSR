@@ -2,7 +2,7 @@
 
 	<div class="logo-details">
 		<i class="bx bx-loader bx-spin-hover"></i>
-		<span class="logo_name">PSR</span>
+		<span class="logo_name bx-tada-hover">PSR</span>
 	</div>
 
 	<ul class="nav-links">

@@ -7,7 +7,6 @@ class Ocurrences extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('ocurrences_model');
-		$this->load->model('clients_model');
 	}
 
 	public function index() {
@@ -18,6 +17,7 @@ class Ocurrences extends CI_Controller {
 	}
 
 	public function add() {
+		$this->load->model('clients_model');
 		$data['title'] = "PSR - Adicionar Ocurrência";
 
 		$ocurrences =  $this->ocurrences_model->GetAll('nomeCliente');
@@ -29,6 +29,29 @@ class Ocurrences extends CI_Controller {
 		$this->load->view('Ocurrences/add', $data);
 	}
 
+	public function edit() {
+		$data['title'] = "PSR - Editar Ocorrência";
+		$id = $this->uri->segment(2);
+
+		if(is_null($id))
+			redirect(base_url("ocorrencias"), 'refresh');
+
+		$data['ocurrences'] = $this->ocurrences_model->GetById($id);
+
+		$this->load->view('Ocurrences/edit', $data);
+	}
+
+	public function details() {
+		$data['title'] = "PSR - Editar Ocorrência";
+		$id = $this->uri->segment(2);
+
+		if(is_null($id))
+			redirect(base_url("ocorrencias"), 'refresh');
+
+		$data['ocurrences'] = $this->ocurrences_model->GetById($id);
+
+		$this->load->view('Ocurrences/details', $data);
+	}
 
 
 	public function Save(){
@@ -44,7 +67,7 @@ class Ocurrences extends CI_Controller {
 			if(!$status) {
 				$this->session->set_flashdata('error', 'Não foi possível inserir a ocorrência.');
 			} else {
-				$this->session->set_flashdata('success', '<script>alert("add com sucesso")</script>');
+				$this->session->set_flashdata('success', '<script>ocurrenceAddSuccess();</script>');
 				redirect(base_url("ocorrencias"), 'refresh');
 			}
 
@@ -56,6 +79,26 @@ class Ocurrences extends CI_Controller {
 
 		$this->load->view('Ocurrences/add',$data);
 	}
+
+	public function Update() {
+
+		$validacao = self::Validation('update');
+
+		if($validacao) {
+
+			$ocurrence = $this->input->post();
+			$status = $this->ocurrences_model->Update($ocurrence['id'], $ocurrence);
+
+			if(!$status)
+				$this->session->set_flashdata('error', 'Não foi possível atualizar o produto.');
+			else {
+				$this->session->set_flashdata('success', '<script>ocurrenceUpdatedSuccess();</script>');
+				redirect(base_url("ocorrencias"), 'refresh');
+			}
+		} else
+			$this->session->set_flashdata('error',validation_errors('<p class="validationErrors">* ','</p>'));
+	}
+
 
 	public function Delete() {
 		$id = $this->uri->segment(2);
@@ -76,6 +119,7 @@ class Ocurrences extends CI_Controller {
 
 		switch($operacao){
 			case 'save':
+			case 'update':
 			case 'insert':
 				$rules['nomeCliente'] = array('trim', 'required', 'min_length[3]');
 				$rules['tipoEquipa'] = array('trim', 'required', 'min_length[2]', 'max_length[10]');
