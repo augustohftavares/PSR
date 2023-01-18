@@ -9,7 +9,6 @@ class Ocurrences_model extends MY_Model {
 	}
 	
 	function Modelar($ocurrences){
-
 		if($ocurrences) {
 			for($i = 0; $i < count($ocurrences); $i++) {
 				$ocurrences[$i]['edit_url'] = base_url('editar_ocorrencia'."/".$ocurrences[$i]['id']);
@@ -20,4 +19,10 @@ class Ocurrences_model extends MY_Model {
 		} else
 			return false;
 	}
+
+	function ClosedOcurr() {
+		$sql = $this->db->query('SELECT * FROM ocurrence WHERE status = "fechado"');
+    	return $sql->result();
+	}
+
 }

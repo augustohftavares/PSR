@@ -12,7 +12,7 @@ $this->load->view('comuns/header');
 	<nav>
 		<div class="sidebar-button">
 			<i class="bx bx-menu sidebarBtn"></i>
-			<span class="dashboard">Editar Ocorrência</span>
+			<span class="dashboard">Detalhes Ocorrência #<?php echo $ocurrences['id'] ?></span>
 		</div>
 
 		

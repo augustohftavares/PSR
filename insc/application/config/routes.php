@@ -73,3 +73,4 @@ $route['update_ocurrence'] = "Ocurrences/Update";
 $route['detalhes_ocorrencia/(:num)'] = "Ocurrences/Details/$1";
 $route['editar_ocorrencia/(:num)'] = "Ocurrences/Edit/$1";
 $route['eliminar_ocorrencia/(:num)'] = "Ocurrences/Delete/$1";
+$route['ocurrencias_fechadas'] = "Ocurrences/ocurrences_closed";

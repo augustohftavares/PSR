@@ -88,7 +88,7 @@ $this->load->view('comuns/header');
 
 			<!-- -->
 
-			<label for="pelicula">Película</label><span style="color: red;">*</span> 
+			<label for="pelicula">Película</label>
 			<select id="pelicula" name="pelicula">
 				<option value="Não">Não</option>
 				<option value="Sim">Sim</option>
@@ -96,7 +96,7 @@ $this->load->view('comuns/header');
 
 			<!-- -->
 
-			<label for="pin">Equipamento tem pin/padrão</label><span style="color: red;">*</span> 
+			<label for="pin">Equipamento tem pin/padrão</label>
 			<input name="pin" id="pin" value="<?php echo set_value('pin')?>" />
 
 
@@ -113,7 +113,7 @@ $this->load->view('comuns/header');
 			<!-- -->
 
 			<label for="observacoes">Observações</label>
-			<textarea name="observacoes" id="observacoes" rows="5"></textarea>
+			<textarea name="observacoes" id="observacoes" rows="5">Sem observações.</textarea>
 
 			<!-- -->
 
@@ -122,6 +122,7 @@ $this->load->view('comuns/header');
 				$dt= $date->format('Y-m-d H:i:s'); 
 			?>
 			<input class="inputs-all" type="hidden" id="data" name="data" value="<?php echo $dt ?>" />
+			<input class="inputs-all" type="hidden" id="status" name="status" value="pendente" />
 
 			<!-- -->
 

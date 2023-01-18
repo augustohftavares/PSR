@@ -19,16 +19,17 @@
 	margin-bottom: 26px;
 }
 
+
 /*
  * TABLE
  */
 table { 
 	width: 100%; 
   	border-collapse: collapse; 
+  	margin-top: 20px;
 }
 
 th { 
-	border-bottom: 1px solid gray;
   	color: gray; 
   	font-weight: bold; 
 }
@@ -38,7 +39,13 @@ td, th {
   	text-align: left; 
 }
 
-td {color: gray;}
+td {
+	color: gray;
+
+}
+
+tr {
+}
 
 #btnAddOcurrence {
 	background: #5C5CFF;
@@ -197,4 +204,19 @@ textarea {resize: none;}
 	border-radius: 5px;
 	color: #fff;
 	padding: 2px;
+}
+
+#status {
+	background: #8A8AFF;
+	color: #fff;
+}
+
+#trHeader {
+	background: #fff;
+	padding: 0 10px;
+	box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+}
+
+#trContent td{
+	padding-bottom: 40px;
 }

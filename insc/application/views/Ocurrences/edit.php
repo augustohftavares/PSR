@@ -36,6 +36,13 @@ $this->load->view('comuns/header');
 
 		<form id="formEditOcurrence" method="post" action="<?php echo base_url('update_ocurrence') ?>">
 
+			<select id="status" name="status">
+				<option value="<?php echo $ocurrences['status'] ?>"><?php echo $ocurrences['status'] ?></option>
+				<option value="aberto">aberto</option>
+				<option value="fechado">fechado</option>
+				<option value="pendente">pendente</option>
+			</select>
+
 			<label for="nomeCliente">Cliente #<?php echo $ocurrences['id']?></label> 
 			<input name="nomeCliente" id="nomeCliente" value="<?php echo $ocurrences['nomeCliente']?>" readonly/>
 

@@ -53,6 +53,14 @@ class Ocurrences extends CI_Controller {
 		$this->load->view('Ocurrences/details', $data);
 	}
 
+	public function ocurrences_closed() {
+		$data['title'] = "PSR - Ocorrências Fechadas";
+
+		$data['ocurrences'] =  $this->ocurrences_model->ClosedOcurr();
+
+		$this->load->view('Ocurrences/ocurrences_closed', $data);
+	}
+
 
 	public function Save(){
 		$data['title'] = "PSR - Adicionar Ocurrência";
