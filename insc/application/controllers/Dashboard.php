@@ -12,6 +12,14 @@ class Dashboard extends CI_Controller {
 		$data['title'] = "PSR - Dashboard";
 		$this->load->view('Dashboard/index', $data);
 	}
+
+	
+
+	public function register() {
+
+
+	}
+
 }
 
 ?>

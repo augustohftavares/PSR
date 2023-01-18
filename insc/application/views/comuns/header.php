@@ -15,6 +15,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<link href="<?php echo base_url("assets/css/geral.css") ?>" rel="stylesheet" />
 		<link href="<?php echo base_url("assets/css/menu.css") ?>" rel="stylesheet" />
 		<link href="<?php echo base_url("assets/css/responsive.css") ?>" rel="stylesheet" />
+		<link href="<?php echo base_url("assets/css/loginRegister_background.css") ?>" rel="stylesheet" />
+		<link href="<?php echo base_url("assets/css/loginRegister.css") ?>" rel="stylesheet" />
 
 		<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
 

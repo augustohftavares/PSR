@@ -57,11 +57,13 @@ $route['translate_uri_dashes'] = FALSE;
  * DASHBOARD
  */
 $route['dashboard'] = "Dashboard/index";
+$route['registar'] = "Dashboard/registar";
 
 /*
  * CLIENTS
  */
 $route['clientes'] = "Clients/index";
+$route['detalhes_cliente/(:num)'] = "Clients/Details/$1";
 
 /*
  * OCURRENCES

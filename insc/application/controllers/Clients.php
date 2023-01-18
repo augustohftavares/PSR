@@ -16,6 +16,17 @@ class Clients extends CI_Controller {
 		$this->load->view('Clients/index', $data);
 	}
 
+	public function details() {
+		$data['title'] = "PSR - Detalhes Cliente";
+		$id = $this->uri->segment(2);
+
+		if(is_null($id))
+			redirect(base_url("clientes"), 'refresh');
+
+		$data['clients'] = $this->clients_model->GetById($id);
+
+		$this->load->view('Clients/details', $data);
+	}
 }
 
 ?>

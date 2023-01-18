@@ -220,3 +220,60 @@ textarea {resize: none;}
 #trContent td{
 	padding-bottom: 40px;
 }
+
+.dropdown {
+  	position: relative;
+  	display: inline-block;
+}
+
+.dropdown-content {
+  	display: none;
+  	position: absolute;
+  	background-color: #f9f9f9;
+  	min-width: 160px;
+  	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  	z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+	background: #f9f9f9;
+  	display: block;
+  	margin-top: 90px;
+  	right: 5%;
+  	width: 100%;
+  	padding: 5px;
+  	margin-bottom: 1px solid;
+}
+
+.dropdown a{
+	text-decoration: none;
+	color: gray;
+}
+
+.dropdown li:hover {
+	color: #0A2558;
+}
+
+.dropdown-content {
+	margin-top: 500px;
+}
+
+#list-dropdown{
+	list-style: none;
+}
+
+
+#account-link {
+	border-bottom: 1px solid gray;
+	padding: 5px;
+	color: gray;
+}
+
+#account-link:hover {
+	background: #8A8AFF;
+	color: #fff;
+}
+
+#searchbarOcurrence, #searchbarClient {
+	padding: 5px;
+}
