@@ -13,13 +13,6 @@ class Dashboard extends CI_Controller {
 		$this->load->view('Dashboard/index', $data);
 	}
 
-	
-
-	public function register() {
-
-
-	}
-
 }
 
 ?>

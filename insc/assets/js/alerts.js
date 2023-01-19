@@ -25,4 +25,27 @@ function ocurrenceUpdatedSuccess() {
 	})
 }
 
+/*
+ * ACCOUNT
+ */
+function registerSuccess() {
+	Swal.fire({
+  		position: 'top-end',
+  		icon: 'success',
+  		title: 'Conta criada',
+  		showConfirmButton: false,
+  		timer: 1000,
+  		timerProgressBar: true
+	})
+}
 
+function loginSuccess() {
+	Swal.fire({
+  		position: 'top-end',
+  		icon: 'success',
+  		title: 'Login efetuado',
+  		showConfirmButton: false,
+  		timer: 1000,
+  		timerProgressBar: true
+	})
+}

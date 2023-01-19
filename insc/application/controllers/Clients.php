@@ -16,6 +16,16 @@ class Clients extends CI_Controller {
 		$this->load->view('Clients/index', $data);
 	}
 
+	public function index_reg() {
+		$data['title'] = "PSR - Registar";
+		$this->load->view('Clients/index_reg', $data);
+	}
+
+	public function index_log() {
+		$data['title'] = "PSR - Login";
+		$this->load->view('Clients/index_log', $data);
+	}
+
 	public function details() {
 		$data['title'] = "PSR - Detalhes Cliente";
 		$id = $this->uri->segment(2);

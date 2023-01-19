@@ -81,7 +81,7 @@ class Ocurrences extends CI_Controller {
 
 		} else {
 			$this->session->set_flashdata('error',validation_errors('<p class="validationErrors">* ','</p>'));
-			redirect(base_url("adicionar_ocurrencia"));
+			redirect(base_url("registar"));
 
 		}
 

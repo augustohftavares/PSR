@@ -18,4 +18,15 @@ class Clients_model extends MY_Model {
 		} else
 			return false;
 	}
+
+	function chk_password($password, $email) {
+
+
+        $query = $this->db->query("SELECT * FROM client WHERE password='$password' AND email='$email'");
+
+        if($query->num_rows() == 1)
+        	return $query->row();
+        else
+        	return false;
+    }
 }
