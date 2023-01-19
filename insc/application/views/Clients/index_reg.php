@@ -9,45 +9,49 @@ $this->load->view('comuns/header');
 
 			<h2>Crie a sua conta</h1>
 
-			<?php if($this->session->flashdata('error') == TRUE): ?>
-				<div class="alert">
-		  			<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-		  			<?php echo $this->session->flashdata('error') ?>
+			<?php if (validation_errors()) : ?>
+				<div class="alert alert-danger" role="alert">
+					<?php echo validation_errors() ?>
 				</div>
-			<?php endif ?>
+			<?php endif; ?>
 
-			<form action="<?php echo base_url("registar") ?>" method="post">
+			<?php if (isset($error)) : ?>
+					<div class="alert alert-danger" role="alert">
+						<?php echo $error ?>
+					</div>
+			<?php endif; ?>
+
+			<form action="<?php echo base_url("criar_conta") ?>" method="post">
 
 
 				<i class='bx bxs-user'></i>
-				<label for="email">Nome</label>
+				<label for="email">Nome</label><span style="color: red;">*</span>
 		        <input type="text" id="email" name="nome" placeholder="Exemplo: Lino Nóbrega" />
-
 
 		        <!-- -->
 
 				<i class='bx bxs-envelope'></i>
-				<label for="email">Email</label>
+				<label for="email">Email</label><span style="color: red;">*</span>
 		        <input type="text" id="email" name="email" placeholder="exemplo@gmail.com" />
 
 		        <!-- -->
 
 		        <i class='bx bxs-phone'></i>
-				<label for="telemovel">Telemóvel</label>
+				<label for="telemovel">Telemóvel</label><span style="color: red;">*</span>
 		        <input type="text" id="telemovel" name="telemovel" placeholder="Exemplo: 961893432" maxlength="9" />
 
 		        <!-- -->
 
 
 		        <i class='bx bx-lock-alt'></i>
-				<label for="password">Password</label>
+				<label for="password">Password</label><span style="color: red;">*</span>
 		        <input type="password" id="password" name="password" placeholder="***************" />
 
 		        <!-- -->
 
 		        <i class='bx bxs-lock-alt' ></i>
-		        <label for="confirmpassword">Confirmar password</label>
-		        <input type="password" id="confirmpassword" placeholder="***************" />
+		        <label for="password_confirm">Confirmar password</label><span style="color: red;">*</span>
+		        <input type="password" id="password_confirm" name="password_confirm" placeholder="***************" />
 
 		        <button type="submit">Criar conta</button>
 

@@ -6,9 +6,9 @@ $this->load->view('comuns/header');
 		<?php
             $this->load->view('comuns/menu');
         ?>
-        
+
         <section class="home-section">
-        	
+
 			<?php
             	$this->load->view('comuns/nav');
         	?>
@@ -21,8 +21,8 @@ $this->load->view('comuns/header');
 
 				<input type="text" id="searchbarOcurrence" onkeyup="search_o();" placeholder="Procurar ocorrência..." />
 
-				<?php 
-					if($this->session->flashdata('success') == TRUE) 
+				<?php
+					if($this->session->flashdata('success') == TRUE)
 						echo $this->session->flashdata('success');
 				?>
 
@@ -44,13 +44,13 @@ $this->load->view('comuns/header');
 
 						<?php if($ocurrences == FALSE): ?>
 							<tr id="trContent">
-								<td>Não existe nenhuma ocorrência</td> 
-								<td></td> 
-								<td></td> 
-								<td></td> 
-								<td></td> 
-								<td></td> 
-								<td></td> 
+								<td>Não existe nenhuma ocorrência</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
 							</tr>
 						<?php else: ?>
 

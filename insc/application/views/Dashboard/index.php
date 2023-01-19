@@ -19,6 +19,7 @@ $this->load->view('comuns/header');
 					if($this->session->flashdata('success') == TRUE)
 						echo $this->session->flashdata('success');
 				?>
+				
 
 		  	</div>
 </section>

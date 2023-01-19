@@ -9,3 +9,7 @@ https://boxicons.com/?query=
 
 login/register
 https://www.youtube.com/watch?v=Tks7mXkp2eQ
+
+
+https://github.com/hedii/Codeigniter-login-logout-register/blob/master/README.md
+https://github.com/hedii/Codeigniter-login-logout-register

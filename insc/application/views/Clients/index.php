@@ -4,14 +4,14 @@ $this->load->view('comuns/header');
 
 	<body>
 		<?php
-            $this->load->view('comuns/menu');
-        ?>
-        
+      $this->load->view('comuns/menu');
+    ?>
+
         <section class="home-section">
-        	
+
 			<?php
-            	$this->load->view('comuns/nav');
-        	?>
+				$this->load->view('comuns/nav');
+      ?>
 
 
 
@@ -27,8 +27,8 @@ $this->load->view('comuns/header');
 				            <th>NIF</th>
 				            <th>Telemóvel</th>
 				            <th>Email</th>
-				            <th>Total Faturado</th>
-				            <th>Total Lucro</th>
+				            <th>Total Faturado<i class='bx bx-euro' style="color: green;"></i></th>
+				            <th>Total Lucro<i class='bx bx-euro' style="color: green;"></i></th>
 				            <th></th>
 			            </tr>
 					</thead>
@@ -38,12 +38,12 @@ $this->load->view('comuns/header');
 						<?php if($clients == FALSE): ?>
 							<tr id="trContent">
 								<td>Não existe nenhum cliente</td>
-								<td>-</td>  
-								<td>-</td>  
-								<td>-</td>  
-								<td>-</td>  
-								<td>-</td>  
-								<td>-</td>  
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
 							</tr>
 						<?php else: ?>
 
@@ -54,8 +54,8 @@ $this->load->view('comuns/header');
 								<td><?php echo $row['nif']?></td>
 								<td><?php echo $row['telemovel']?></td>
 								<td><?php echo $row['email']?></td>
-								<td><?php echo $row['total_faturado']?> EUR</td>
-								<td><?php echo $row['total_lucro']?> EUR</td>
+								<td><?php echo $row['total_faturado']?></td>
+								<td><?php echo $row['total_lucro']?></td>
 								<td>
 		                        	<a href="<?php echo $row['detail_url'] ?>"><i class='bx bxs-detail'></i></a>
 								</td>

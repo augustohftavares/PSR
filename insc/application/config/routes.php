@@ -21,6 +21,8 @@ $route['clientes'] = "Clients/index";
 $route['detalhes_cliente/(:num)'] = "Clients/Details/$1";
 $route['login'] = "Clients/index_log";
 $route['registar'] = "Clients/index_reg";
+$route['criar_conta'] = "Clients/register";
+$route['entrar'] = "Clients/login";
 
 /*
  * OCURRENCES

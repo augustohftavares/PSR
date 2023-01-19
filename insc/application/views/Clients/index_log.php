@@ -9,24 +9,29 @@ $this->load->view('comuns/header');
 
 			<h2>PSR LOGIN</h1>
 
-			<?php if($this->session->flashdata('error') == TRUE): ?>
-				<div class="alert">
-		  			<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-		  			<?php echo $this->session->flashdata('error') ?>
+			<?php if (validation_errors()) : ?>
+				<div class="alert alert-danger" role="alert">
+					<?php echo validation_errors() ?>
 				</div>
-			<?php endif ?>
+			<?php endif; ?>
+
+			<?php if (isset($error)) : ?>
+				<div class="alert alert-danger" role="alert">
+					<?php echo $error ?>
+				</div>
+			<?php endif; ?>
 
 			<form action="<?php echo base_url("entrar") ?>" method="post">
 
 				<i class='bx bxs-envelope'></i>
-				<label for="email">Email</label>
-		        <input type="text" id="email" name="email" placeholder="example@gmail.com" />
+				<label for="email">Email</label><span style="color: red;">*</span>
+		    <input type="text" id="email" name="email" placeholder="example@gmail.com" />
 
-		        <i class='bx bxs-lock-alt' ></i>
-				<label for="password">Password</label>
-		        <input type="password" id="password" name="password" placeholder="**********" />
+		    <i class='bx bxs-lock-alt' ></i>
+				<label for="password">Password</label><span style="color: red;">*</span>
+		    <input type="password" id="password" name="password" placeholder="**********" />
 
-		        <button type="submit">Entrar</button>
+		    <button type="submit">Entrar</button>
 
 			</form>
 
