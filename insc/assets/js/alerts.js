@@ -26,26 +26,16 @@ function ocurrenceUpdatedSuccess() {
 }
 
 /*
- * ACCOUNT
+ * AUTH
  */
-function registerSuccess() {
+function registerClientSucess() {
 	Swal.fire({
   		position: 'top-end',
   		icon: 'success',
-  		title: 'Conta criada',
+  		title: 'Sucesso',
+			text: 'A tua conta foi criada com sucesso, agora efetua o login.',
   		showConfirmButton: false,
-  		timer: 1000,
-  		timerProgressBar: true
-	})
-}
-
-function loginSuccess() {
-	Swal.fire({
-  		position: 'top-end',
-  		icon: 'success',
-  		title: 'Login efetuado',
-  		showConfirmButton: false,
-  		timer: 1000,
+  		timer: 2500,
   		timerProgressBar: true
 	})
 }

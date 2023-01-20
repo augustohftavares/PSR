@@ -7,7 +7,7 @@ class Ocurrences_model extends MY_Model {
 		parent::__construct();
 		$this->table = 'ocurrence';
 	}
-	
+
 	function Modelar($ocurrences){
 		if($ocurrences) {
 			for($i = 0; $i < count($ocurrences); $i++) {

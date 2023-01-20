@@ -6,23 +6,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | RESERVED ROUTES
 | -------------------------------------------------------------------------
 */
-$route['default_controller'] = 'dashboard';
+$route['default_controller'] = 'auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+/*
+ * AUTHENTICATION
+ */
+ $route['login'] = "Auth/index";
+ $route['criar_conta'] = "Auth/index_reg";
+ $route['registar'] = "Auth/register";
+ $route['entrar'] = "Auth/login";
+ $route['sair'] = "Auth/logout";
 
 /*
  * DASHBOARD
  */
 $route['dashboard'] = "Dashboard/index";
+
 /*
  * CLIENTS
  */
 $route['clientes'] = "Clients/index";
 $route['detalhes_cliente/(:num)'] = "Clients/Details/$1";
-$route['login'] = "Clients/index_log";
-$route['registar'] = "Clients/index_reg";
-$route['criar_conta'] = "Clients/register";
-$route['entrar'] = "Clients/login";
 
 /*
  * OCURRENCES

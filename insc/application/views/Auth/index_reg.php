@@ -21,7 +21,7 @@ $this->load->view('comuns/header');
 					</div>
 			<?php endif; ?>
 
-			<form action="<?php echo base_url("criar_conta") ?>" method="post">
+			<form action="<?php echo base_url("registar") ?>" method="post">
 
 
 				<i class='bx bxs-user'></i>
