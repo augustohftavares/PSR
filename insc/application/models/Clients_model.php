@@ -12,6 +12,7 @@ class Clients_model extends MY_Model {
 
 		if($clients) {
 			for($i = 0; $i < count($clients); $i++) {
+				$clients[$i]['edit_url']= base_url('editar_cliente'."/".$clients[$i]['id']);
 				$clients[$i]['detail_url']= base_url('detalhes_cliente'."/".$clients[$i]['id']);
 			}
 			return $clients;

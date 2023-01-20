@@ -29,8 +29,8 @@ class Auth_model extends MY_Model {
 
 
 		if ($this->form_validation->run() === false) {
-
-			$this->load->view("Auth/index_reg");
+			$data['title'] = 'PSR - Criar Conta';
+			$this->load->view("Auth/index_reg", $data);
 
 		} else {
 
@@ -38,7 +38,7 @@ class Auth_model extends MY_Model {
 				"nome" => $this->input->post('nome'),
 				"telemovel" => $this->input->post('telemovel'),
 				"email" => $this->input->post('email'),
-				"password" => $password
+				"password" => password_hash($password, PASSWORD_DEFAULT)
 			);
 
 			$this->Insert($data);
@@ -52,9 +52,11 @@ class Auth_model extends MY_Model {
 
 	public function login_client() {
 
+		//https://forum.codeigniter.com/post-321556.html
+
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
-
+		$password_h = password_hash($password, PASSWORD_DEFAULT);
 		$this->db->where('email', $email);
 		$this->db->where('password', $password);
 
@@ -66,24 +68,19 @@ class Auth_model extends MY_Model {
 
 		if ($this->form_validation->run() === false) {
 
-			$this->load->view('Auth/index_log');
+			$data['title'] = 'PSR - Iniciar Sessão';
+			$this->load->view('Auth/index_log', $data);
 
 		} else {
 
 			if($find_client > 0) {
 
-				//$_SESSION['client_id'] = (int)$client->id;
-				//$_SESSION['nome'] = (string)$client->nome;
-				//$_SESSION['email'] = (string)$client->email;
-				//$_SESSION['telemovel'] = (int)$client->telemovel;
 				$_SESSION['logged_in'] = (bool)true;
-				//$_SESSION['is_admin'] = (bool)$client->is_admin;
 
 				$this->session->set_flashdata('success', 'Iniciaste sessão com sucesso');
 				redirect(base_url("dashboard"), 'refresh');
 
 			} else {
-
 				$this->session->set_flashdata('error', 'O campo Email ou o Campo Password estão errados.');
 				redirect(base_url("login"), 'refresh');
 

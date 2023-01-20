@@ -7,7 +7,7 @@ $this->load->view('comuns/header');
 
 		<div id="divLoginRegister">
 
-			<h2>Crie a sua conta</h1>
+			<h2>Introduza os seus dados de registo</h1>
 
 			<?php if (validation_errors()) : ?>
 				<div class="alert alert-danger" role="alert">
@@ -26,26 +26,26 @@ $this->load->view('comuns/header');
 
 				<i class='bx bxs-user'></i>
 				<label for="email">Nome</label><span style="color: red;">*</span>
-		        <input type="text" id="email" name="nome" placeholder="Exemplo: Lino Nóbrega" />
+		    <input type="text" id="email" name="nome" placeholder="Exemplo: Lino Nóbrega" />
 
 		        <!-- -->
 
 				<i class='bx bxs-envelope'></i>
 				<label for="email">Email</label><span style="color: red;">*</span>
-		        <input type="text" id="email" name="email" placeholder="exemplo@gmail.com" />
+		    <input type="text" id="email" name="email" placeholder="exemplo@gmail.com" />
 
 		        <!-- -->
 
-		        <i class='bx bxs-phone'></i>
+		    <i class='bx bxs-phone'></i>
 				<label for="telemovel">Telemóvel</label><span style="color: red;">*</span>
-		        <input type="text" id="telemovel" name="telemovel" placeholder="Exemplo: 961893432" maxlength="9" />
+		    <input type="text" id="telemovel" name="telemovel" placeholder="Exemplo: 961893432" maxlength="9" />
 
 		        <!-- -->
 
 
-		        <i class='bx bx-lock-alt'></i>
+		    <i class='bx bx-lock-alt'></i>
 				<label for="password">Password</label><span style="color: red;">*</span>
-		        <input type="password" id="password" name="password" placeholder="***************" />
+		     <input type="password" id="password" name="password" placeholder="***************" />
 
 		        <!-- -->
 

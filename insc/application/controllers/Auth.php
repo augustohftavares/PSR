@@ -10,12 +10,12 @@ class Auth extends CI_Controller {
 	}
 
   public function index() {
-		$data['title'] = "PSR - Login";
+		$data['title'] = "PSR - Iniciar Sessão";
 		$this->load->view('Auth/index_log', $data);
 	}
 
 	public function index_reg() {
-		$data['title'] = "PSR - Registar";
+		$data['title'] = "PSR - Criar Conta";
 		$this->load->view('Auth/index_reg', $data);
 	}
 

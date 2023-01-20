@@ -20,8 +20,9 @@ class Dashboard extends CI_Controller {
 		$ocurrencesClosed = $this->ocurrences_model->ClosedOcurr();
 
 		$data['ocurrencesTotal'] = count($ocurrences);
-		$data['clientsTotal'] = count($clients);
 		$data['ocurrencesClosedTotal'] = count($ocurrencesClosed);
+		$data['clientsTotal'] = count($clients);
+
 
 		$this->load->view('Dashboard/index', $data);
 

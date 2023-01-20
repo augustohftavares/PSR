@@ -39,3 +39,21 @@ function registerClientSucess() {
   		timerProgressBar: true
 	})
 }
+
+/*
+ * CLIENTS
+ */
+
+function clientUpdatedSuccess() {
+
+	Swal.fire({
+  		position: 'top-end',
+  		icon: 'success',
+  		title: 'Sucesso',
+			text: 'O Cliente foi atualizado com sucesso',
+  		showConfirmButton: false,
+  		timer: 2500,
+  		timerProgressBar: true
+	})
+
+}

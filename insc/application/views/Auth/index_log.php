@@ -7,7 +7,7 @@ $this->load->view('comuns/header');
 
 		<div id="divLoginRegister">
 
-			<h2>PSR LOGIN</h1>
+			<h2>Iniciar Sessão</h1>
 
 			<?php if (validation_errors()) : ?>
 				<div class="alert alert-danger" role="alert">

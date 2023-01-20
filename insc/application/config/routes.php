@@ -28,7 +28,9 @@ $route['dashboard'] = "Dashboard/index";
  * CLIENTS
  */
 $route['clientes'] = "Clients/index";
+$route['editar_cliente/(:num)'] = "Clients/Edit/$1";
 $route['detalhes_cliente/(:num)'] = "Clients/Details/$1";
+$route['update_client'] = "Clients/Update";
 
 /*
  * OCURRENCES
