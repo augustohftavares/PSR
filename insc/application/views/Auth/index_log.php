@@ -7,6 +7,8 @@ $this->load->view('comuns/header');
 
 		<div id="divLoginRegister">
 
+			<img id="inscLogo" src="<?php echo base_url("assets/img/inscLogo.png")?>" alt="insc logo" />
+
 			<h2>Iniciar Sessão</h1>
 
 			<?php if (validation_errors()) : ?>
@@ -33,7 +35,7 @@ $this->load->view('comuns/header');
 
 				<i class='bx bxs-envelope'></i>
 				<label for="email">Email</label><span style="color: red;">*</span>
-		    <input type="text" id="email" name="email" placeholder="example@gmail.com" />
+		    <input type="text" id="email" name="email" placeholder="exemplo@gmail.com" />
 
 		    <i class='bx bxs-lock-alt' ></i>
 				<label for="password">Password</label><span style="color: red;">*</span>

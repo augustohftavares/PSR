@@ -7,6 +7,8 @@ $this->load->view('comuns/header');
 
 		<div id="divLoginRegister">
 
+			<img id="inscLogo" src="<?php echo base_url("assets/img/inscLogo.png")?>" alt="insc logo" />
+
 			<h2>Introduza os seus dados de registo</h1>
 
 			<?php if (validation_errors()) : ?>

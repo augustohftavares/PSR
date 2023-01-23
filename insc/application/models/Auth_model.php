@@ -8,7 +8,13 @@ class Auth_model extends MY_Model {
 		$this->table = 'client';
 	}
 
-
+/**
+ * Register System
+ *
+ * @access public
+ * @param none
+ * @return Null
+ */
 	public function register_client() {
 
 		$password = $this->input->post('password');
@@ -50,19 +56,34 @@ class Auth_model extends MY_Model {
 
 	}//end register_client
 
+/**
+ * Login System
+ *
+ * @param none
+ * @access public
+ * @return Null
+ */
 	public function login_client() {
 
-		//https://forum.codeigniter.com/post-321556.html
+		$inputs = array(
+			"email" => $this->input->post('email'),
+			"password" => $this->input->post('password')
+		);
 
-		$email = $this->input->post('email');
-		$password = $this->input->post('password');
-		$password_h = password_hash($password, PASSWORD_DEFAULT);
-		$this->db->where('email', $email);
-		$this->db->where('password', $password);
+		$query2 = $this->db->get_where('client', $email);
+		$client_row = $query2->row();
+
+		if(password_verify($inputs["password"], $client_row->password)){
+			$inputs["password"] = $client_row->password;
+			$this->db->where('email', $inputs["email"]);
+			$this->db->where('password', $inputs["password"]);
+		} else {
+			$this->session->set_flashdata('error', 'O campo Email ou o Campo Password estão errados.');
+			redirect(base_url("login"), 'refresh');
+		}
 
 		$query = $this->db->get('client');
 		$find_client = $query->num_rows($query);
-
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]');
 
@@ -76,38 +97,36 @@ class Auth_model extends MY_Model {
 			if($find_client > 0) {
 
 				$_SESSION['logged_in'] = (bool)true;
-
 				$this->session->set_flashdata('success', 'Iniciaste sessão com sucesso');
 				redirect(base_url("dashboard"), 'refresh');
 
 			} else {
+
 				$this->session->set_flashdata('error', 'O campo Email ou o Campo Password estão errados.');
 				redirect(base_url("login"), 'refresh');
 
 			}
-
 		}
-
-
 	}//end login_client()
 
+	/**
+	 * Logout System
+	 *
+	 * @access public
+	 * @param none
+	 * @return Null
+	 */
 	public function logout_client() {
 
 		if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-
 			//foreach ($_SESSION as $key => $value) {
 				//unset($_SESSION[$key]);
 			//}
 			unset($_SESSION['logged_in']);
 			$_SESSION['logged_in'] = (bool)false;
-
-			redirect(base_url("dashboard"), 'refresh');
-
-		} else {
+			redirect(base_url("login"), 'refresh');
+		} else
 			redirect('/', 'refresh');
-		}
-
 	}
-
 
 }//end class Auth_model()

@@ -19,33 +19,26 @@
 	margin-bottom: 26px;
 }
 
-
 /*
  * TABLE
  */
 table {
-		width: 100%;
-  	border-collapse: collapse;
-  	margin-top: 20px;
+	width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
 th {
-  	color: gray;
-  	font-weight: bold;
+  color: gray;
+  font-weight: bold;
 }
 
 td, th {
 	padding: 10px;
-  	text-align: left;
+  text-align: left;
 }
 
-td {
-	color: gray;
-
-}
-
-tr {
-}
+td {color: gray;}
 
 #btnAddOcurrence {
 	background: #5C5CFF;
@@ -70,15 +63,14 @@ tr {
 }
 
 .card {
-		width: 45%;
-  	max-width: 90%;
-  	margin: 20px auto 0;
-  	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  	padding: 24px;
-  	border-radius: 10px;
-  	background: #ffffff;
+	width: 45%;
+  max-width: 90%;
+  margin: 20px auto 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 24px;
+  border-radius: 10px;
+  background: #ffffff;
 }
-
 
 #list-details {list-style: none; color: #696969}
 #list-content{margin-top: 20px}
@@ -89,26 +81,26 @@ tr {
  */
 
 .alert {
-  	padding: 10px;
-  	background-color: #f44336;
-		border-radius: 5px;
-  	color: #fff;
-  	width: 100%;
+	padding: 10px;
+  background-color: #FF5C5C;
+	border-radius: 5px;
+	color: #fff;
+  width: 100%;
 }
 
 .closebtn {
-  	margin-left: 15px;
-  	color: white;
-  	font-weight: bold;
-  	float: right;
-  	font-size: 22px;
-  	line-height: 20px;
-  	cursor: pointer;
-  	transition: 0.3s;
+  margin-left: 15px;
+	color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .closebtn:hover {
-  	color: black;
+  color: black;
 }
 
 #pendente {
@@ -211,21 +203,18 @@ tr {
   font: 400 1.6rem/2.2rem 'Open Sans script=all', sans-serif;
 }
 
-
-
-
 /*
  * FORMS
  */
 
  #divForms {
-     max-width: 500px;
-     margin: auto;
-     margin-top: 50px;
-     background-color: #fff;
-     border-radius: 10px;
-     padding: 50px;
-     color: gray;
+	 max-width: 500px;
+   margin: auto;
+	 margin-top: 50px;
+   background-color: #fff;
+   border-radius: 10px;
+   padding: 50px;
+   color: gray;
  }
 
  #divForms h2{
@@ -237,27 +226,27 @@ tr {
  }
 
  #divForms form label {
-     padding: 12px 12px 12px 0;
-     display: inline-block;
+	 padding: 12px 12px 12px 0;
+	 display: inline-block;
  }
 
  #divForms form input{
-     width: 100%;
-     padding: 12px;
-     border: 1px solid #ccc;
-     border-radius: 4px;
-     resize: vertical;
-     outline: none;
+   width: 100%;
+   padding: 12px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   resize: vertical;
+   outline: none;
  }
 
  #divForms form textarea{
-		 width: 100%;
-		 padding: 12px;
-		 border: 1px solid #ccc;
-		 border-radius: 4px;
-		 resize: vertical;
-		 outline: none;
-		 resize: none;
+	 width: 100%;
+   padding: 12px;
+	 border: 1px solid #ccc;
+	 border-radius: 4px;
+	 resize: vertical;
+	 outline: none;
+   resize: none;
  }
 
  #divForms form select{
@@ -270,25 +259,25 @@ tr {
  }
 
  #divForms form button {
-     background-color: #2E2EFF;
-     color: white;
-     padding: 12px 20px;
-     border: none;
-     border-radius: 4px;
-     cursor: pointer;
-     float: right;
-     margin-top: 10px;
+	 background-color: #2E2EFF;
+   color: white;
+   padding: 12px 20px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   float: right;
+	 margin-top: 10px;
  }
 
 
  #submitButton {
-     background-color: #2E2EFF;
-     color: white;
-     padding: 12px 20px;
-     border: none;
-     border-radius: 4px;
-     cursor: pointer;
-     margin-top: 10px;
+	 background-color: #2E2EFF;
+   color: white;
+   padding: 12px 20px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   margin-top: 10px;
  }
 
  #submitButton:hover {background-color: #5C5CFF ;}
