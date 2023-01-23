@@ -8,7 +8,6 @@ class Dashboard extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('ocurrences_model');
 		$this->load->model('clients_model');
-
 	}
 
 	public function index() {
@@ -23,11 +22,8 @@ class Dashboard extends CI_Controller {
 		$data['ocurrencesClosedTotal'] = count($ocurrencesClosed);
 		$data['clientsTotal'] = count($clients);
 
-
 		$this->load->view('Dashboard/index', $data);
-
 	}
-
 }
 
 ?>

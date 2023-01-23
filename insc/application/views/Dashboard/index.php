@@ -19,30 +19,24 @@ $this->load->view('comuns/header');
 							<section>
 						  	<div class="card-container">
 
-						    	<div class="card">
-						      	<img src="<?php echo base_url("assets/img/totalClients.png"); ?>"/>
+						    	<div class="card cardDash">
 						      	<div class="content">
-						        	<h3>Clientes</h3>
-											<p>
-												<?php echo $clientsTotal;  ?>
-
-											</p>
+						        	<h3 id="titleCard"><i class='bx bx-user'></i> Clientes</h3>
+											<p><i class='bx bx-stats'></i><?php echo $clientsTotal;  ?></p>
 						      	</div>
 						    	</div>
 
-						    	<div class="card">
-						      	<img src="<?php echo base_url("assets/img/ocorrencesTotal.jpg"); ?>"/>
+						    	<div class="card cardDash">
 						      	<div class="content">
-						        	<h3>Ocorrências</h3>
-											<p><?php echo $ocurrencesTotal ?></p>
+						        	<h3 id="titleCard"><i class='bx bxs-analyse'></i> Ocorrências</h3>
+											<p><i class='bx bx-stats'></i><?php echo $ocurrencesTotal ?></p>
 						      	</div>
 						    	</div>
 
-						    	<div class="card">
-						      	<img src="<?php echo base_url("assets/img/closedOtotal.jpg"); ?>"/>
+						    	<div class="card cardDash">
 						      	<div class="content">
-						        	<h3>Ocorrências Fechadas</h3>
-											<p><?php echo $ocurrencesClosedTotal ?></p>
+						        	<h3 id="titleCard"><i class='bx bx-x' style="color: red;"></i>Ocorrências Fechadas</h3>
+											<p><i class='bx bx-stats'></i><?php echo $ocurrencesClosedTotal ?></p>
 						      	</div>
 						    	</div>
 

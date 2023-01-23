@@ -1,8 +1,7 @@
 <div class="sidebar">
 
 	<div class="logo-details">
-		<i class="bx bx-loader bx-spin-hover"></i>
-		<span class="logo_name bx-tada-hover">PSR</span>
+		<img id="inscLogoMenu" src="<?php echo base_url("assets/img/inscLogo.png")?>" alt="insc logo"/>
 	</div>
 
 	<ul class="nav-links">

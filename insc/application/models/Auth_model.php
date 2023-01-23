@@ -33,27 +33,21 @@ class Auth_model extends MY_Model {
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]');
 		$this->form_validation->set_rules('password_confirm', 'Confirmar Password', 'trim|required|min_length[6]|matches[password]');
 
-
 		if ($this->form_validation->run() === false) {
 			$data['title'] = 'PSR - Criar Conta';
 			$this->load->view("Auth/index_reg", $data);
-
 		} else {
-
 			$data = array(
 				"nome" => $this->input->post('nome'),
 				"telemovel" => $this->input->post('telemovel'),
 				"email" => $this->input->post('email'),
 				"password" => password_hash($password, PASSWORD_DEFAULT)
 			);
-
 			$this->Insert($data);
 			$this->session->set_flashdata('success', '<script>registerClientSucess();</script>');
 			$data['title'] = 'PSR - Login';
 			$this->load->view("Auth/index_log", $data);
 		}
-
-
 	}//end register_client
 
 /**
@@ -74,39 +68,34 @@ class Auth_model extends MY_Model {
 		$client_row = $query2->row();
 
 		if(password_verify($inputs["password"], $client_row->password)){
+
 			$inputs["password"] = $client_row->password;
 			$this->db->where('email', $inputs["email"]);
 			$this->db->where('password', $inputs["password"]);
+
+			$query = $this->db->get('client');
+			$find_client = $query->num_rows($query);
+			$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+			$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]');
+
+			if ($this->form_validation->run() === false) {
+				$data['title'] = 'PSR - Iniciar Sessão';
+				$this->load->view('Auth/index_log', $data);
+			} else {
+				if($find_client > 0) {
+					$_SESSION['logged_in'] = (bool)true;
+					$this->session->set_flashdata('success', 'Iniciaste sessão com sucesso');
+					redirect(base_url("dashboard"), 'refresh');
+				} else {
+					$this->session->set_flashdata('error', 'O campo Email ou o Campo Password estão errados.');
+					redirect(base_url("login"), 'refresh');
+				}
+			}
 		} else {
 			$this->session->set_flashdata('error', 'O campo Email ou o Campo Password estão errados.');
 			redirect(base_url("login"), 'refresh');
 		}
 
-		$query = $this->db->get('client');
-		$find_client = $query->num_rows($query);
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]');
-
-		if ($this->form_validation->run() === false) {
-
-			$data['title'] = 'PSR - Iniciar Sessão';
-			$this->load->view('Auth/index_log', $data);
-
-		} else {
-
-			if($find_client > 0) {
-
-				$_SESSION['logged_in'] = (bool)true;
-				$this->session->set_flashdata('success', 'Iniciaste sessão com sucesso');
-				redirect(base_url("dashboard"), 'refresh');
-
-			} else {
-
-				$this->session->set_flashdata('error', 'O campo Email ou o Campo Password estão errados.');
-				redirect(base_url("login"), 'refresh');
-
-			}
-		}
 	}//end login_client()
 
 	/**

@@ -191,6 +191,7 @@ td {color: gray;}
   padding: 15px 20px;
 }
 .card-container .card h3 {
+	color: #5C5CFF !important;
   font: 2.8rem/3.4rem 'Bree Serif', serif;
   padding: 0;
   margin: 0 0 10px;
@@ -281,3 +282,9 @@ td {color: gray;}
  }
 
  #submitButton:hover {background-color: #5C5CFF ;}
+
+ #titleCard {
+	 color: gray;
+	 font-size: 30px;
+	 font-family: Anton, sans-serif;
+ }

@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<meta charset="utf-8">
 		<title><?php echo $title ?></title>
-		<link rel="icon" type="image/x-icon" href="<?php echo base_url("assets/img/logo.png") ?>">
+		<link rel="icon" type="image/x-icon" href="<?php echo base_url("assets/img/inscLogo.png") ?>">
 
 		<link href="<?php echo base_url("assets/css/geral.css") ?>" rel="stylesheet" />
 		<link href="<?php echo base_url("assets/css/menu.css") ?>" rel="stylesheet" />
